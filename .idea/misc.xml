@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/background_gradient_drawer_head.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_add.xml" value="0.224" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_back.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_delete.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_exit.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_favourite.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_feedback.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_folder.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_forward.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_info.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_launcher_background.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_music.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_pause.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_play.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_playlist.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_repeat.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_share.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_suffle.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/font/font.xml" value="0.234375" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/activity_splash_screen.xml" value="0.264" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/favourite_card_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/fragment_audio_list.xml" value="0.264" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/fragment_favourite_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/fragment_folder_card.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/fragment_folder_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/fragment_play_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/fragment_playing_audio.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/fragment_splash_screen.xml" value="0.2" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/music_details_card.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/nav_header.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/playlist_card.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/menu/nav_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/menu/navigation_menu.xml" value="0.20416666666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

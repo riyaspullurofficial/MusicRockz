@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/audioListFragment">
+
+    <fragment
+        android:id="@+id/audioListFragment"
+        android:name="app.riyaspullur.musicrockz.view.AudioListFragment"
+        android:label="fragment_audio_list"
+        tools:layout="@layout/fragment_audio_list" >
+        <action
+            android:id="@+id/action_audioListFragment_to_playingAudioFragment"
+            app:destination="@id/playingAudioFragment"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_audioListFragment_to_favouriteListFragment"
+            app:destination="@id/favouriteListFragment" />
+        <action
+            android:id="@+id/action_audioListFragment_to_playListFragment"
+            app:destination="@id/playListFragment" />
+        <action
+            android:id="@+id/action_audioListFragment_to_folderListFragment"
+            app:destination="@id/folderListFragment"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/playListFragment"
+        android:name="app.riyaspullur.musicrockz.view.PlayListFragment"
+        android:label="fragment_play_list"
+        tools:layout="@layout/fragment_play_list" >
+        <action
+            android:id="@+id/action_playListFragment_to_audioListFragment"
+            app:destination="@id/audioListFragment"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/favouriteListFragment"
+        android:name="app.riyaspullur.musicrockz.view.FavouriteListFragment"
+        android:label="fragment_favourite_list"
+        tools:layout="@layout/fragment_favourite_list" >
+        <action
+            android:id="@+id/action_favouriteListFragment_to_audioListFragment"
+            app:destination="@id/audioListFragment"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/playingAudioFragment"
+        android:name="app.riyaspullur.musicrockz.view.PlayingAudioFragment"
+        android:label="fragment_playing_audio"
+        tools:layout="@layout/fragment_playing_audio" >
+        <action
+            android:id="@+id/action_playingAudioFragment_to_audioListFragment"
+            app:destination="@id/audioListFragment"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/folderListFragment"
+        android:name="app.riyaspullur.musicrockz.view.FolderListFragment"
+        android:label="fragment_folder_list"
+        tools:layout="@layout/fragment_folder_list" >
+        <action
+            android:id="@+id/action_folderListFragment_to_audioListFragment"
+            app:destination="@id/audioListFragment"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_folderListFragment_to_favouriteListFragment"
+            app:destination="@id/favouriteListFragment" />
+        <action
+            android:id="@+id/action_folderListFragment_to_playingAudioFragment"
+            app:destination="@id/playingAudioFragment" />
+        <action
+            android:id="@+id/action_folderListFragment_to_playListFragment"
+            app:destination="@id/playListFragment" />
+    </fragment>
+</navigation>

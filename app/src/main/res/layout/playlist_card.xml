@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180dp"
+    android:padding="2dp"
+    android:layout_height="200dp"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:padding="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            app:cardCornerRadius="30dp"
+            >
+            <ImageView
+                android:id="@+id/imageCardFavouriteID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/musicicon"/>
+
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/audioNameCardFavouriteID"
+                android:layout_width="match_parent"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:text="Laganxxx"
+                android:textColor="@color/black"
+                />
+            <ImageView
+                android:id="@+id/playlistDeleteICID"
+                android:layout_marginTop="5dp"
+                android:layout_width="25dp"
+                android:src="@drawable/ic_delete"
+                android:layout_height="30dp"
+                app:tint="@color/redpic" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

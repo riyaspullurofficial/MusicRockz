@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title=""
+
+        />
+    <item
+        android:id="@+id/feedBackNavID"
+        android:contentDescription="@string/feedback"
+        android:title="@string/feedback"
+        android:icon="@drawable/ic_feedback"/>
+    <item
+        android:title=""
+
+        />
+    <item
+        android:id="@+id/aboutUsNavID"
+        android:contentDescription="@string/about_us"
+        android:icon="@drawable/ic_info"
+        android:title="@string/about_us" />
+
+    <item
+        android:title=""
+
+        />
+    <item
+        android:id="@+id/exitNavID"
+        android:contentDescription="@string/exit"
+        android:iconTint="@color/redpic"
+        android:icon="@drawable/ic_exit"
+        android:title="@string/exit"
+        />
+
+
+
+
+</menu>
