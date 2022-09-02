@@ -11,7 +11,13 @@ class Constants {
             val seconds = (TimeUnit.SECONDS.convert(duration, TimeUnit.MILLISECONDS))
             -minutes * TimeUnit.SECONDS.convert(1, TimeUnit.MINUTES)
 
-            return String.format("%2d:%02d", minutes, seconds)
+          var newSeconds=seconds/100
+
+            if (seconds<100){
+                return String.format("%2d:%2d", minutes, seconds)
+            }else{
+                return String.format("%2d:%2d", minutes, newSeconds)
+            }
         }
     }
 }

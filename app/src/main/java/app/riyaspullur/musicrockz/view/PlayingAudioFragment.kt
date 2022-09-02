@@ -3,21 +3,30 @@ package app.riyaspullur.musicrockz.view
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SeekBar
+import android.widget.SeekBar.OnSeekBarChangeListener
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import app.riyaspullur.musicrockz.R
 import app.riyaspullur.musicrockz.adapters.MusicTempAdapter
+import app.riyaspullur.musicrockz.constants.Constants
 import app.riyaspullur.musicrockz.databinding.FragmentPlayingAudioBinding
 import coil.load
 
+
 class PlayingAudioFragment : Fragment() {
+
+    companion object {
+        var isPlaying = false
+    }
+
     var mediaPlayer: MediaPlayer? = null
-    var isPlaying = true
+
     var pos: Int? = null
     val musicList = MusicTempAdapter.musicList
 
@@ -35,15 +44,20 @@ class PlayingAudioFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+        isPlaying = true
+
         val pathSong = MusicTempAdapter.songPath
         if (MusicTempAdapter.positions != null) {
             pos = MusicTempAdapter.positions
             val newPath = musicList[pos!!].path
             val title = musicList[pos!!].title
+
+
             var nextOrPreviousPath = ""
             try {
                 binding.imageIconID.load(musicList[pos!!].artUri)
-
+                binding.endingTimerID.text =
+                    Constants.formatDuration(MusicTempAdapter.musicList[pos!!].duration)
                 /*   pathSong=requireArguments().getString("songPath")*/
                 if (pathSong!!.isNotEmpty()) {
                     if (mediaPlayer == null) mediaPlayer = MediaPlayer()
@@ -54,6 +68,37 @@ class PlayingAudioFragment : Fragment() {
                     binding.songNameIdFull.text = title
                     binding.playOrPause.setImageResource(R.drawable.ic_pause)
                 }
+                binding.seekBarMusicPlayingID.setOnSeekBarChangeListener(object :
+                    OnSeekBarChangeListener {
+
+                    override fun onStopTrackingTouch(seekBar: SeekBar) {
+                        /*      Toast.makeText(requireContext(),"seek stop tracking",Toast.LENGTH_SHORT).show()*/
+                        binding.seekBarMusicPlayingID.progress = seekBar.progress
+                    }
+
+                    override fun onStartTrackingTouch(seekBar: SeekBar) {
+                        /*  Toast.makeText(requireContext(),"seek start tracking",Toast.LENGTH_SHORT).show()*/
+                        binding.seekBarMusicPlayingID.progress = seekBar.progress
+
+
+                    }
+
+                    override fun onProgressChanged(
+                        seekBar: SeekBar,
+                        progress: Int,
+                        fromUser: Boolean
+                    ) {
+                        if (mediaPlayer != null && fromUser) {
+                            mediaPlayer!!.seekTo(progress * 1000)
+
+                        }
+
+                    }
+
+
+
+                })
+
 
                 println("playing : $pathSong")
             } catch (e: Exception) {
@@ -90,6 +135,8 @@ class PlayingAudioFragment : Fragment() {
                 val imagePath = MusicTempAdapter.musicList[pos!!].artUri
                 imageLoad(imagePath)
                 binding.songNameIdFull.text = MusicTempAdapter.musicList[pos!!].title
+                binding.endingTimerID.text =
+                    Constants.formatDuration(MusicTempAdapter.musicList[pos!!].duration)
                 println("$pos next  : ${MusicTempAdapter.musicList[pos!!].path}")
             }
             binding.previousBtn.setOnClickListener {
@@ -104,6 +151,8 @@ class PlayingAudioFragment : Fragment() {
                 mediaPlayer!!.prepare()
                 mediaPlayer!!.start()
                 binding.songNameIdFull.text = MusicTempAdapter.musicList[pos!!].title
+                binding.endingTimerID.text =
+                    Constants.formatDuration(MusicTempAdapter.musicList[pos!!].duration)
                 val imagePath = MusicTempAdapter.musicList[pos!!].artUri
 
                 imageLoad(imagePath)
@@ -133,8 +182,8 @@ class PlayingAudioFragment : Fragment() {
                 mediaPlayer!!.prepare()
                 mediaPlayer!!.stop()
 
-            }catch (e:Exception){
-                Log.d("exception back ====",e.toString())
+            } catch (e: Exception) {
+                Log.d("exception back ====", e.toString())
             }
         }
         super.onStop()

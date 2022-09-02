@@ -42,7 +42,7 @@ class AudioListFragment : Fragment() {
 
     companion object {
         var musicListMA: ArrayList<MusicData> = ArrayList()
-        var navController:NavController? = null
+        var navController: NavController? = null
 
 
     }
@@ -59,7 +59,7 @@ class AudioListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController=findNavController()
+        navController = findNavController()
 
         if (!checkPermission()) {
             requestPermission()
@@ -94,45 +94,51 @@ class AudioListFragment : Fragment() {
 
 
         binding.suffleBtnID.setOnClickListener {
-            Toast.makeText(requireContext(), "ShuffleButton Click", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_audioListFragment_to_playingAudioFragment)
+
+            if (PlayingAudioFragment.isPlaying) {
+                findNavController().navigate(R.id.action_audioListFragment_to_playingAudioFragment)
+            } else {
+                Toast.makeText(requireContext(), "No Current Playing", Toast.LENGTH_SHORT).show()
+            }
 
         }
 
         binding.favouriteBtnID.setOnClickListener {
-            Toast.makeText(requireContext(), "Favourite Button Click", Toast.LENGTH_SHORT).show()
+          /*  Toast.makeText(requireContext(), "Favourite Button Click", Toast.LENGTH_SHORT).show()*/
             findNavController().navigate(R.id.action_audioListFragment_to_favouriteListFragment)
         }
 
 
         binding.playListBtnID.setOnClickListener {
-            Toast.makeText(requireContext(), "Play list Button Click", Toast.LENGTH_SHORT).show()
+      /*      Toast.makeText(requireContext(), "Play list Button Click", Toast.LENGTH_SHORT).show()*/
             findNavController().navigate(R.id.action_audioListFragment_to_playListFragment)
 
 
         }
         binding.audioListBtnIDsAudioList.setOnClickListener {
-            Toast.makeText(
+      /*      Toast.makeText(
                 requireContext(),
                 "Audio  list Button Click AudioList",
                 Toast.LENGTH_SHORT
-            ).show()
+            ).show()*/
         }
         binding.folderListBtnIDsAudioList.setOnClickListener {
-            Toast.makeText(
+       /*     Toast.makeText(
                 requireContext(),
                 "Folder  list Button Click AudioList",
                 Toast.LENGTH_SHORT
-            ).show()
+            ).show()*/
             findNavController().navigate(R.id.action_audioListFragment_to_folderListFragment)
         }
 
 
     }
-  fun navigateMediaPlayer(){
 
-      navController!!.navigate(R.id.action_audioListFragment_to_playingAudioFragment)
+    fun navigateMediaPlayer() {
+
+        navController!!.navigate(R.id.action_audioListFragment_to_playingAudioFragment)
     }
+
     private fun requestRuntimePermission() {
         if (ActivityCompat.checkSelfPermission(
                 requireContext(), android.Manifest.permission.WRITE_EXTERNAL_STORAGE
