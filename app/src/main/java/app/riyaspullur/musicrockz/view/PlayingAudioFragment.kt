@@ -127,11 +127,15 @@ class PlayingAudioFragment : Fragment() {
 
     override fun onStop() {
         if (isPlaying) {
-            mediaPlayer!!.reset()
+            try {
+                mediaPlayer!!.reset()
 
-            mediaPlayer!!.prepare()
-            mediaPlayer!!.stop()
-            isPlaying = false
+                mediaPlayer!!.prepare()
+                mediaPlayer!!.stop()
+
+            }catch (e:Exception){
+                Log.d("exception back ====",e.toString())
+            }
         }
         super.onStop()
     }
