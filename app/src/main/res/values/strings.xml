@@ -20,4 +20,10 @@
     <string name="about_us">About Us</string>
     <string name="exit">Exit</string>
     <string name="image">image</string>
+    <string name="your_name">Your Name</string>
+    <string name="subject">Subject</string>
+    <string name="message">Message</string>
+    <string name="cancel">Cancel</string>
+    <string name="playing_audio">playing Audio</string>
+    <string name="source_document_of_this_app_n_from_github_click_icon_below">Source Document Of This app\n From Github click Icon Below</string>
 </resources>

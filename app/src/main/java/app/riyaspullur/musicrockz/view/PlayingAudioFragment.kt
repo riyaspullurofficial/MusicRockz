@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import app.riyaspullur.musicrockz.R
@@ -24,7 +25,7 @@ class PlayingAudioFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentPlayingAudioBinding.inflate(layoutInflater)
         // Inflate the layout for this fragment
         return binding.root
@@ -37,7 +38,7 @@ class PlayingAudioFragment : Fragment() {
         val pathSong = MusicTempAdapter.songPath
         if (MusicTempAdapter.positions != null) {
             pos = MusicTempAdapter.positions
-            var newPath = musicList[pos!!].path
+            val newPath = musicList[pos!!].path
             try {
                 binding.imageIconID.load(musicList[pos!!].artUri)
 
@@ -110,8 +111,9 @@ class PlayingAudioFragment : Fragment() {
 
 
 
-            binding.backbuttonIDPlaying.setOnClickListener {
+            binding.backbuttonIDFavouriteFragment.setOnClickListener {
                 findNavController().navigate(R.id.action_playingAudioFragment_to_audioListFragment)
+                Toast.makeText(requireContext(),"fsflskflsfd",Toast.LENGTH_SHORT).show()
             }
         }
     }

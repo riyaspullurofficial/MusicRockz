@@ -22,7 +22,11 @@
         <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_repeat.xml" value="0.186" />
         <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_share.xml" value="0.186" />
         <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/drawable/ic_suffle.xml" value="0.186" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/font-v26/custom_fonts.xml" value="0.234375" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/font/custom_fonts.xml" value="0.234375" />
         <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/font/font.xml" value="0.234375" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/activity_about_us.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/activity_feedback.xml" value="0.203125" />
         <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/activity_splash_screen.xml" value="0.264" />
         <entry key="..\:/Android Projects Study/MusicRockz/app/src/main/res/layout/favourite_card_layout.xml" value="0.20416666666666666" />
