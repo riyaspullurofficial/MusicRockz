@@ -19,7 +19,7 @@ class PlayingAudioFragment : Fragment() {
     var mediaPlayer: MediaPlayer? = null
     var isPlaying = true
     var pos: Int? = null
-    val musicList=MusicTempAdapter.musicList
+    val musicList = MusicTempAdapter.musicList
 
     lateinit var binding: FragmentPlayingAudioBinding
     override fun onCreateView(
@@ -39,6 +39,8 @@ class PlayingAudioFragment : Fragment() {
         if (MusicTempAdapter.positions != null) {
             pos = MusicTempAdapter.positions
             val newPath = musicList[pos!!].path
+            val title = musicList[pos!!].title
+            var nextOrPreviousPath = ""
             try {
                 binding.imageIconID.load(musicList[pos!!].artUri)
 
@@ -49,6 +51,8 @@ class PlayingAudioFragment : Fragment() {
                     mediaPlayer!!.setDataSource(newPath)
                     mediaPlayer!!.prepare()
                     mediaPlayer!!.start()
+                    binding.songNameIdFull.text = title
+                    binding.playOrPause.setImageResource(R.drawable.ic_pause)
                 }
 
                 println("playing : $pathSong")
@@ -61,50 +65,49 @@ class PlayingAudioFragment : Fragment() {
                     mediaPlayer!!.setDataSource(newPath)
                     mediaPlayer!!.prepare()
                     mediaPlayer!!.pause()
+                    binding.playOrPause.setImageResource(R.drawable.ic_play)
                     isPlaying = false
                 } else {
                     mediaPlayer!!.reset()
                     mediaPlayer!!.setDataSource(newPath)
                     mediaPlayer!!.prepare()
                     mediaPlayer!!.start()
+                    binding.playOrPause.setImageResource(R.drawable.ic_pause)
                     isPlaying = true
                 }
             }
             binding.nextBtn.setOnClickListener {
                 mediaPlayer!!.reset()
-                mediaPlayer!!.setDataSource(newPath)
-                mediaPlayer!!.prepare()
                 mediaPlayer!!.stop()
 
                 isPlaying = true
                 pos = pos!! + 1
-                MusicTempAdapter.musicList[pos!!].path
+                nextOrPreviousPath = MusicTempAdapter.musicList[pos!!].path
                 mediaPlayer!!.reset()
-                mediaPlayer!!.setDataSource(newPath)
+                mediaPlayer!!.setDataSource(nextOrPreviousPath)
                 mediaPlayer!!.prepare()
                 mediaPlayer!!.start()
-
-                println("$pos next  : ${  MusicTempAdapter.musicList[pos!!].path}")
+                val imagePath = MusicTempAdapter.musicList[pos!!].artUri
+                imageLoad(imagePath)
+                binding.songNameIdFull.text = MusicTempAdapter.musicList[pos!!].title
+                println("$pos next  : ${MusicTempAdapter.musicList[pos!!].path}")
             }
             binding.previousBtn.setOnClickListener {
                 mediaPlayer!!.reset()
-                mediaPlayer!!.setDataSource(newPath)
-                mediaPlayer!!.prepare()
                 mediaPlayer!!.stop()
 
                 isPlaying = true
                 pos = pos!! - 1
-                MusicTempAdapter.musicList[pos!!].path
+                nextOrPreviousPath = MusicTempAdapter.musicList[pos!!].path
                 mediaPlayer!!.reset()
-                mediaPlayer!!.setDataSource(newPath)
+                mediaPlayer!!.setDataSource(nextOrPreviousPath)
                 mediaPlayer!!.prepare()
                 mediaPlayer!!.start()
+                binding.songNameIdFull.text = MusicTempAdapter.musicList[pos!!].title
+                val imagePath = MusicTempAdapter.musicList[pos!!].artUri
 
-                println("$pos prev  : ${  MusicTempAdapter.musicList[pos!!].path}")
-
-            }
-            mediaPlayer!!.setOnCompletionListener {
-
+                imageLoad(imagePath)
+                println("$pos prev  : ${MusicTempAdapter.musicList[pos!!].path}")
 
             }
 
@@ -113,9 +116,24 @@ class PlayingAudioFragment : Fragment() {
 
             binding.backbuttonIDFavouriteFragment.setOnClickListener {
                 findNavController().navigate(R.id.action_playingAudioFragment_to_audioListFragment)
-                Toast.makeText(requireContext(),"fsflskflsfd",Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "fsflskflsfd", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun imageLoad(imagePath: String) {
+        binding.imageIconID.load(imagePath)
+    }
+
+    override fun onStop() {
+        if (isPlaying) {
+            mediaPlayer!!.reset()
+
+            mediaPlayer!!.prepare()
+            mediaPlayer!!.stop()
+            isPlaying = false
+        }
+        super.onStop()
     }
 
 }

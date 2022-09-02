@@ -9,7 +9,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import app.riyaspullur.musicrockz.databinding.ActivityMainBinding
-import app.riyaspullur.musicrockz.view.AboutUsActivity
 import app.riyaspullur.musicrockz.view.FeedbackActivity
 import com.google.android.material.navigation.NavigationView
 
@@ -60,7 +59,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         } else if (item.itemId == R.id.aboutUsNavID) {
             Toast.makeText(this, "about Us", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(applicationContext, AboutUsActivity::class.java))
         } else if (item.itemId == R.id.exitNavID) {
             Toast.makeText(this, "Exit", Toast.LENGTH_SHORT).show()
             alertForExit()
@@ -95,6 +93,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         alertDialog.show()
 
     }
+
 
 
 }

@@ -12,6 +12,7 @@ import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import app.riyaspullur.musicrockz.R
+import app.riyaspullur.musicrockz.constants.Constants
 import app.riyaspullur.musicrockz.databinding.MusicDetailsCardBinding
 import app.riyaspullur.musicrockz.model.MusicData
 import app.riyaspullur.musicrockz.model.MusicTempDataClass
@@ -50,7 +51,7 @@ class MusicTempAdapter(var list: ArrayList<MusicData>, var context: Context) :
         val item = list[position]
         holder.songName.text = item.title
         holder.songDescription.text = item.artist
-        holder.duration.text =formatDuration(item.duration)
+        holder.duration.text =Constants.formatDuration(item.duration)
         holder.image.load(item.artUri)
 
         holder.itemView.setOnClickListener {
@@ -68,10 +69,11 @@ class MusicTempAdapter(var list: ArrayList<MusicData>, var context: Context) :
     override fun getItemCount(): Int = list.size
 }
 
+/*
 fun formatDuration(duration: Long): String {
     val minutes = TimeUnit.MINUTES.convert(duration, TimeUnit.MILLISECONDS)
     val seconds = (TimeUnit.SECONDS.convert(duration, TimeUnit.MILLISECONDS))
                             -minutes * TimeUnit.SECONDS.convert(1, TimeUnit.MINUTES)
 
     return String.format("%2d:%02d",minutes,seconds)
-}
+}*/

@@ -60,7 +60,7 @@
             android:id="@+id/action_playingAudioFragment_to_audioListFragment"
             app:destination="@id/audioListFragment"
             app:popUpTo="@+id/nav_graph"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/folderListFragment"
